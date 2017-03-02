@@ -7,6 +7,7 @@
 	padding: 12px 0px;
 	background-color: rgba(0, 0, 0, 0.6);
 	align-items: center;
+	z-index: 1000;
 
 	.wh-link {
 		display: inline-flex;
@@ -28,7 +29,6 @@
 
 	.wh-search {
 		flex-grow: 1;
-		text-align: center;
 
 		input {
 			width: 400px;
@@ -36,7 +36,7 @@
 			font-size: 16px;
 			padding: 10px 10px 10px 35px;
 			background-color: transparent;
-			background-image: url('/images/search-icon-b.svg');
+			background-image: url('/public/images/search-icon-b.svg');
 			background-repeat: no-repeat;
 			background-position: 0% 50%;
 		}
@@ -49,7 +49,7 @@
 		li {
 			.wh-joinus {
 				padding: 6px 15px;
-				border: 1px solid white;
+				border: 2px solid white;
 				border-radius: 4px;
 			}
 

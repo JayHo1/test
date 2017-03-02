@@ -1,15 +1,74 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Cookie } from 'ng2-cookies';
+import { ProjectsService } from '../projects.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    providers: [ProjectsService]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+    // cookies: Object;
+    // keys: Array<string>;
+    // cName: string;
+    // cValue: string;
+    // rName: string;
+    // checkName: string;
+    // arrays: Array<string>;
+    projects: Array<string>;
 
-  ngOnInit() {
-  }
+    // public array = [
+    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_discover.jpg" /></div>`',
+    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_home_signup.jpg" /></div>`',
+    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_meet.jpg" /></div>`'
+    // ]
+
+    constructor(private ProjectsService: ProjectsService) {
+        // this.update();
+        // this.ProjectsService.getProjects().subscribe( Projects => {
+        //     console.log(Projects);
+        // }, err => {
+        //     console.log(err);
+        // });
+    }
+
+    // ngOnInit() {
+    //     jQuery('.slick-slider').slick({ 
+    //         dots: true,
+    //         arrows: true,
+    //         infinite: true,
+    //         speed: 500,
+    //         autoplay: true,
+    //         autoplaySpeed: 8000,
+    //         swipeToSlide: false,
+    //         prevArrow:"<img class='a-left control-c prev slick-prev' src='public/images/arrow-back-w-01.svg'>",
+    //         nextArrow:"<img class='a-right control-c next slick-next' src='public/images/arrow-back-w-02.svg'>",
+    //     });
+    // }
+
+    // update() {
+    //     this.cookies = Cookie.getAll();
+    //     this.keys = Object.keys(this.cookies);
+    // }
+    // addCookie(cName: string, cValue: string) {
+    //     console.log('Adding: ', cName, cValue);
+    //     Cookie.set(cName, cValue);
+    //     this.update();
+    // }
+    // removeCookie(rName: string) {
+    //     console.log('Removing: ', rName);
+    //     Cookie.delete(rName);
+    //     this.update();
+    // }
+    // removeAll() {
+    //     console.log('Removing all cookies');
+    //     Cookie.deleteAll();
+    //     this.update();
+    // }
+    // checkCookie() {
+    //     window.alert('Check cookie ' + this.checkName + ' returned ' + Cookie.check(this.checkName));
+    // }
 
 }

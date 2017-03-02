@@ -11,7 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { MeetComponent } from './meet/meet.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
 
 /* Routes */
 const appRoutes: Routes = [
