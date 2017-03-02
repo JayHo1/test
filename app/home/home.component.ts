@@ -19,19 +19,45 @@ export class HomeComponent {
     // arrays: Array<string>;
     projects: Array<string>;
 
-    // public array = [
-    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_discover.jpg" /></div>`',
-    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_home_signup.jpg" /></div>`',
-    //     '`<div><img class="btn btn-lg" src="public/images/poster/poster_meet.jpg" /></div>`'
-    // ]
+    private body = {
+        "query": {
+            "sort": {
+                "field": "rank",
+                "reverse": false
+            },
+            "members": [
+                {
+                    "field": "location",
+                    "value": "Paris, France"
+                }
+            ]
+        },
+        "paginate": {
+            "limit": 100,
+            "offset": 10
+        }
+    }
 
     constructor(private ProjectsService: ProjectsService) {
         // this.update();
-        // this.ProjectsService.getProjects().subscribe( Projects => {
-        //     console.log(Projects);
-        // }, err => {
-        //     console.log(err);
-        // });
+        this.ProjectsService.getProjects().subscribe( res => {
+            console.log(res);
+            this.projects = res.projects;
+        }, err => {
+            console.log(err);
+        });
+
+        this.ProjectsService.getProject(3).subscribe( res => {
+            console.log(res);
+        }, err => {
+            console.log(err);
+        });
+
+        this.ProjectsService.searchProject(this.body).subscribe( res => {
+            console.log(res);
+        }, err => {
+            console.log(err);
+        });
     }
 
     // ngOnInit() {

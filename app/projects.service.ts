@@ -5,25 +5,33 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-
 @Injectable()
 export class ProjectsService {
 
-
-
 	constructor(private http: Http) { }
 
-	private commentsUrl = 'http://localhost:3000/api/projects';
+	getProject(id: number) : Observable<any> {
+		const url = '/api/projects/' + id;
+
+		return this.http.get(url)
+			.map( (res:Response) => res.json())
+			.catch( (error: any) => Observable.throw(JSON.parse(JSON.stringify(error))));
+	}
 
 	getProjects() : Observable<any> {
+		const url = '/api/projects'
 
-		// ...using get request
-		return this.http.get(this.commentsUrl)
-		// ...and calling .json() on the response to return data
-		.map((res:Response) => res.json())
-		//...errors if any
-		.catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+		return this.http.get(url)
+			.map( (res:Response) => res.json())
+			.catch( (error:any) => Observable.throw(JSON.parse(JSON.stringify(error))));
+	}
 
+	searchProject(body: Object) : Observable<any> {
+		const url = '/api/projects/search'
+
+		return this.http.post(url, body)
+			.map( (res:Response) => res.json())
+			.catch( (error: any) => Observable.throw(JSON.parse(JSON.stringify(error))));
 	}
 
 }
