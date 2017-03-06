@@ -1,11 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Cookie } from 'ng2-cookies';
-import { ProjectsService } from '../projects.service';
+// import { Cookie } from 'ng2-cookies';
+import { ProjectsService } from '../../Services/projects.service';
+import { animateFactory } from 'ng2-animate';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
+    animations: [animateFactory(300, 200, 'linear')],
     providers: [ProjectsService]
 })
 export class HomeComponent {
@@ -40,24 +42,24 @@ export class HomeComponent {
 
     constructor(private ProjectsService: ProjectsService) {
         // this.update();
-        this.ProjectsService.getProjects().subscribe( res => {
-            console.log(res);
-            this.projects = res.projects;
-        }, err => {
-            console.log(err);
-        });
+        // this.ProjectsService.getProjects().subscribe( res => {
+        //     console.log(res);
+        //     this.projects = res.projects;
+        // }, err => {
+        //     console.log(err);
+        // });
 
-        this.ProjectsService.getProject(3).subscribe( res => {
-            console.log(res);
-        }, err => {
-            console.log(err);
-        });
+        // this.ProjectsService.getProject(3).subscribe( res => {
+        //     console.log(res);
+        // }, err => {
+        //     console.log(err);
+        // });
 
-        this.ProjectsService.searchProject(this.body).subscribe( res => {
-            console.log(res);
-        }, err => {
-            console.log(err);
-        });
+        // this.ProjectsService.searchProject(this.body).subscribe( res => {
+        //     console.log(res);
+        // }, err => {
+        //     console.log(err);
+        // });
     }
 
     // ngOnInit() {
