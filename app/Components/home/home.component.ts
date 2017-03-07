@@ -19,6 +19,10 @@ export class HomeComponent {
     // rName: string;
     // checkName: string;
     // arrays: Array<string>;
+    config: Object = {
+        autoplay: 4000,
+        spaceBetween: 30
+    };
     projects: Array<string>;
 
     private body = {

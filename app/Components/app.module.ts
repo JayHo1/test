@@ -18,6 +18,15 @@ import { HomeTrendingComponent } from './home/home-trending/home-trending.compon
 // import { CarouselDirective } from '../Directives/carousel.directive';
 
 /* Library */
+import { SwiperModule } from 'angular2-swiper-wrapper';
+import { SwiperConfigInterface } from 'angular2-swiper-wrapper';
+
+const SWIPER_CONFIG: SwiperConfigInterface = {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    keyboardControl: true
+};
+
 
 /* Routes */
 const appRoutes: Routes = [
@@ -40,6 +49,7 @@ const appRoutes: Routes = [
     ],
     imports: [
         RouterModule.forRoot(appRoutes),
+        SwiperModule.forRoot(SWIPER_CONFIG),
         BrowserModule,
         FormsModule,
         HttpModule

@@ -1,5 +1,4 @@
-
-<div class="main-body2-body">	
+<div class="main-body2-body">
 	<div class="main-body2-card project-card" *ngFor="let projectCard of projectCards">
 		<div class="card-tag">
 			<div class="card-tag-content">
@@ -49,3 +48,55 @@
 	</div>
 </div>     
 
+
+
+<!--   <ks-swiper-container class="myslides main-body2-body" [options]="config">
+    <ks-swiper-slide class="main-body2-card project-card" *ngFor="let projectCard of projectCards">
+      <div class="card-tag">
+			<div class="card-tag-content">
+				<div class="card-tag-bg">
+				</div>
+				<img src="public/images/tag-icon.png">
+				<h5>{{projectCard.category_name}}</h5>
+			</div>
+		</div>
+
+		<div class="card-vote">
+			<div class="card-vote-bg"></div>
+			<img *ngIf="!projectCard.check_vote" src="public/images/Upvote_Icon_w.svg">
+			<img *ngIf="projectCard.check_vote" src="public/images/Upvote_Icon.svg">
+			<span>{{projectCard.vote}}</span>
+		</div>
+		<a class="card-project-page" >
+			<div class="card-picture" [style.background-image]="'url(' + projectCard.picture_card + ')'">
+			</div>
+			<div class="card-info">
+				<div class="card-title-space">
+					<h4>{{projectCard.title}}</h4>
+				</div>
+				<div class="card-status">
+					<span>
+						<img *ngIf="projectCard.status == 'Live project'" src="public/images/live-picto.svg" alt="status-picture"/>
+						<img *ngIf="projectCard.status == 'Idea'" src="public/images/idea-picto.svg" alt="status-picture"/>
+						<img *ngIf="projectCard.status == 'Drafted project'" src="public/images/drafted-picto.svg" alt="status-picture"/>
+						<img *ngIf="projectCard.status == 'Beta project'" src="public/images/beta-picto.svg" alt="status-picture"/>
+						{{projectCard.status}}
+					</span>
+				</div>
+				<div class="card-location">
+					<span><img src="public/images/location-picto.svg" alt="location-picture" />{{projectCard.city}}<i *ngIf="!projectCard.country">,</i> {{projectCard.country}}</span>
+				</div>
+				<div class="card-description-text">
+					<p>{{projectCard.description}}</p>
+				</div>
+				<div class="card-info-by">
+					<figure class="card-info-by-picture">
+						<img [src]="projectCard.pic" alt="card-foot-picture">
+					</figure>
+					<h6>{{projectCard.creator_user_name}}<h6 *ngIf="projectCard.usersIn.length">& {{projectCard.usersIn.length}} more</h6></h6>
+				</div>
+			</div>
+		</a>
+    </ks-swiper-slide>
+  </ks-swiper-container>
+ -->

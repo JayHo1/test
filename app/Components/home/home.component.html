@@ -28,7 +28,7 @@
 					<p>How can we help?</p>
 				</div>
 			</div> -->
-			<section [@animate]="'fadeIn'" class="main-discover-slick slick-slider">
+			<swiper [config]="config" [@animate]="'fadeIn'" class="main-discover-slick slick-slider">
 
 				<div class="main-carousel-slick">
 					<div class="main-title-market">
@@ -48,7 +48,7 @@
 					</div>
 				</div>
 
-				<!-- <div class="main-carousel-slick">
+				<div class="main-carousel-slick">
 					<div class="main-title-market">
 						<h1>Need a helping hand?</h1>
 					</div>
@@ -85,9 +85,9 @@
 						<div class="button-start-project">
 							<button ng-click="main.goforstarter()">Post a project</button>
 						</div>
-					</div> -->
-<!-- 				</div>
- -->			</section>
+					</div>
+				</div>
+			</swiper>
 		</section>
 
 		<h3 *ngFor="let project of projects">{{project.title}}</h3>

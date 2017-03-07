@@ -1,6 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 
-
 @Component({
 	selector: 'app-home-trending',
 	templateUrl: './home-trending.component.html',
